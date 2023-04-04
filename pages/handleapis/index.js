@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function GetApi(){
   const [comment,setComment]=useState({name:"",email:"",phone:""})
@@ -20,8 +20,8 @@ export default function GetApi(){
       })
       const data = await response.json();
       console.log(data)
+      getapi();
     }
-
     return(
         <div style={{textAlign:"center"}} >
           <button onClick={getapi} >
